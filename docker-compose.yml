@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  sessions-storage:
+    image: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    command: redis-server --appendonly yes
