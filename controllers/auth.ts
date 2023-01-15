@@ -3,6 +3,13 @@ import { Request, Response } from 'express';
 function login(req: Request, res: Response) {
   const { email, password } = req.body;
 
+  if (!email || !password) {
+    return res.status(400).json({
+      success: false,
+      error: 'You must provide an email and password',
+    });
+  }
+
   // Check if the credentials ar correct
 
   //...
